@@ -173,5 +173,6 @@
     "variable": ""
   },
   "typescript.showUnused": false,
-  "typescript.suggest.completeFunctionCalls": false
+  "typescript.suggest.completeFunctionCalls": false,
+  "tsserver.disableAutomaticTypeAcquisition": true
 }
