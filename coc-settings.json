@@ -2,6 +2,8 @@
   "coc.preferences.colorSupport": true,
   "coc.preferences.semanticTokensHighlights": true,
 
+  "diagnostic.maxWindowWidth": 100,
+  "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.warningSign": "",
@@ -139,12 +141,20 @@
       ]
     }
   },
+
   "list.previewSplitRight": true,
+
   "prettier.eslintIntegration": true,
+  "prettier.statusItemText": "",
+  "prettier.onlyUseLocalVersion": true,
+
   "python.jediEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.terminal.activateEnvironment": false,
+
   "signature.preferShownAbove": false,
+  "signature.maxWindowWidth": 100,
+
   "suggest.completionItemKindLabels": {
     "class": "",
     "color": "",
@@ -172,7 +182,11 @@
     "value": "",
     "variable": ""
   },
+  "suggest.enablePreview": true,
+  "suggest.maxPreviewWidth": 100,
+
   "typescript.showUnused": false,
   "typescript.suggest.completeFunctionCalls": false,
+
   "tsserver.disableAutomaticTypeAcquisition": true
 }

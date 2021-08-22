@@ -81,4 +81,3 @@ nmap <leader><leader>f :call CocAction('format')<CR>
 
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
-

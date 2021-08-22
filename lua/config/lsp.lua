@@ -63,7 +63,9 @@ local function get_node_modules(root_dir)
 end
 
 local on_attach = function (client)
-  require 'lsp_signature'.on_attach(lsp_signature_config)
+  --[[
+     [ require 'lsp_signature'.on_attach(lsp_signature_config)
+     ]]
   lsp_status.on_attach(client)
   lsp_status.register_progress()
 
@@ -81,6 +83,7 @@ local on_attach = function (client)
   vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()")
   vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()")
   vim.api.nvim_command("autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()")
+  vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.signature_help()")
 
 end
 
