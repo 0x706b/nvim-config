@@ -53,6 +53,8 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>" 
+
 let g:coc_snippet_next = "<TAB>"
 
 imap <expr> <CR> pumvisible() ?
