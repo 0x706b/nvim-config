@@ -1,0 +1,13 @@
+-- local eslint = require 'diagnosticls-configs.linters.eslint'
+-- local prettier_eslint = require 'diagnosticls-configs.formatters.prettier_eslint'
+
+-- require 'diagnosticls-configs'.setup {
+--   ['typescript'] = {
+--     linter = eslint,
+--     formatter = prettier_eslint
+--   },
+--   ['typescriptreact'] = {
+--     linter = eslint,
+--     formatter = prettier_eslint
+--   }
+-- }

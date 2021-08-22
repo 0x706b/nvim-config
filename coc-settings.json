@@ -1,0 +1,177 @@
+{
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.semanticTokensHighlights": true,
+
+  "diagnostic.errorSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.warningSign": "",
+
+  "explorer.file.reveal.auto": true,
+  "explorer.floating.border.chars": [
+    "─",
+    "│",
+    "─",
+    "│",
+    "╭",
+    "╮",
+    "╯",
+    "╰"
+  ],
+  "explorer.icon.enableNerdfont": true,
+  "explorer.keyMappings.global": {
+    "*": "toggleSelection",
+    ".": "toggleHidden",
+    "<<": "gitStage",
+    "<bs>": "gotoParent",
+    "<cr>": "open",
+    "<esc>": "esc",
+    "<tab>": "actionMenu",
+    ">>": "gitUnstage",
+    "?": "help",
+    "A": "addDirectory",
+    "D": "deleteForever",
+    "E": "open:vsplit",
+    "F": "searchRecursive",
+    "J": [
+      "toggleSelection",
+      "nodeNext"
+    ],
+    "K": [
+      "toggleSelection",
+      "nodePrev"
+    ],
+    "R": "refresh",
+    "X": "systemExecute",
+    "Y": "copyFilename",
+    "[[": "sourcePrev",
+    "[c": "gitPrev",
+    "[d": "diagnosticPrev",
+    "]]": "sourceNext",
+    "]c": "gitNext",
+    "]d": "diagnosticNext",
+    "a": "addFile",
+    "c": "copyFile",
+    "d": "delete",
+    "e": "open",
+    "f": "search",
+    "gb": "gotoSource:buffer",
+    "gd": "listDrive",
+    "gf": "gotoSource:file",
+    "gh": "collapseRecursive",
+    "gj": "expandableNext",
+    "gk": "expandablePrev",
+    "gl": "expandRecursive",
+    "gp": "preview:labeling",
+    "h": "collapse",
+    "i": false,
+    "j": "nodeNext",
+    "k": "nodePrev",
+    "l": [
+      "expandable?",
+      "expand",
+      "open"
+    ],
+    "o": "expandOrCollapse",
+    "p": "pasteFile",
+    "q": "quit",
+    "r": "rename",
+    "s": "open:split",
+    "t": "open:tab",
+    "x": "cutFile",
+    "y": "copyFilepath"
+  },
+
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "cuda",
+        "objc",
+        "objcpp"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        },
+        "clang": {
+          "extraArgs": [
+            "-isystem",
+            "/usr/local/Cellar/llvm/11.0.0/include/c++/v1"
+          ],
+          "resourceDir": "/usr/local/Cellar/llvm/11.0.0/lib/clang/11.0.0/"
+        },
+        "client": {
+          "snippetSupport": true
+        },
+        "highlight": {
+          "lsRanges": true
+        }
+      },
+      "rootPatterns": [
+        ".ccls-root",
+        "compile_commands.json"
+      ]
+    },
+    "haskell": {
+      "args": [
+        "--lsp"
+      ],
+      "command": "haskell-language-server-wrapper",
+      "filetypes": [
+        "hs",
+        "lhs",
+        "haskell",
+        "lhaskell"
+      ],
+      "initializationOptions": {
+        "languageServerHaskell": {
+          "hlintOn": true
+        }
+      },
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ]
+    }
+  },
+  "list.previewSplitRight": true,
+  "prettier.eslintIntegration": true,
+  "python.jediEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.terminal.activateEnvironment": false,
+  "signature.preferShownAbove": false,
+  "suggest.completionItemKindLabels": {
+    "class": "",
+    "color": "",
+    "constant": "",
+    "default": "",
+    "enum": "",
+    "enumMember": "",
+    "event": "鬒",
+    "field": "",
+    "file": "",
+    "folder": "",
+    "function": "ƒ",
+    "interface": "",
+    "keyword": "",
+    "method": "",
+    "module": "",
+    "operator": "+",
+    "property": "",
+    "reference": "渚",
+    "snippet": "",
+    "struct": "",
+    "text": "",
+    "typeParameter": "",
+    "unit": "",
+    "value": "",
+    "variable": ""
+  },
+  "typescript.showUnused": false,
+  "typescript.suggest.completeFunctionCalls": false
+}
