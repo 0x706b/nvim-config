@@ -1,13 +1,43 @@
 {
   "coc.preferences.colorSupport": true,
   "coc.preferences.semanticTokensHighlights": true,
-
   "diagnostic.maxWindowWidth": 100,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.warningSign": "",
-
+  "diagnostic-languageserver.mergeConfig": true,
+  "diagnostic-languageserver.linters": {
+    "eslint_d": {
+      "command": "eslint_d",
+      "rootPatterns": [
+        ".git"
+      ],
+      "debounce": 100,
+      "args": [
+        "--stdin",
+        "--stdin-filename",
+        "%filepath",
+        "--format",
+        "json"
+      ],
+      "sourceName": "eslint",
+      "parseJson": {
+        "errorsRoot": "[0].messages",
+        "line": "line",
+        "column": "column",
+        "endLine": "endLine",
+        "endColumn": "endColumn",
+        "message": "${message} [${ruleId}]",
+        "security": "severity"
+      },
+      "securities": ["error", "warning", "info"]
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "typescript": "eslint_d",
+    "typescriptreact": "eslint_d"
+  },
   "explorer.file.reveal.auto": true,
   "explorer.floating.border.chars": [
     "─",
@@ -82,7 +112,6 @@
     "x": "cutFile",
     "y": "copyFilepath"
   },
-
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -141,20 +170,15 @@
       ]
     }
   },
-
   "list.previewSplitRight": true,
-
   "prettier.eslintIntegration": true,
   "prettier.statusItemText": "",
   "prettier.onlyUseLocalVersion": true,
-
   "python.jediEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.terminal.activateEnvironment": false,
-
   "signature.preferShownAbove": false,
   "signature.maxWindowWidth": 100,
-
   "suggest.completionItemKindLabels": {
     "class": "",
     "color": "",
@@ -184,9 +208,7 @@
   },
   "suggest.enablePreview": true,
   "suggest.maxPreviewWidth": 100,
-
   "typescript.showUnused": false,
   "typescript.suggest.completeFunctionCalls": false,
-
   "tsserver.disableAutomaticTypeAcquisition": true
 }
