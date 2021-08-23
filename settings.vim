@@ -20,7 +20,6 @@ set backspace=2
 set hidden
 " set autowrite
 let mapleader = "\<Space>"
-set cc=100
 
 filetype plugin indent on
 
