@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["barbar.nvim"] = {
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18config.barbar\frequire\0" },
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+  },
   ["better-escape.vim"] = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/better-escape.vim"
@@ -105,6 +110,10 @@ _G.packer_plugins = {
   nerdcommenter = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/nerdcommenter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -149,6 +158,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for coc.nvim]], true)
 try_loadstring("\27LJ\2\nZ\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0*source ~/.config/nvim/plugins/coc.vim\17nvim_command\bapi\bvim\0", "config", "coc.nvim")
 time([[Config for coc.nvim]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18config.barbar\frequire\0", "config", "barbar.nvim")
+time([[Config for barbar.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

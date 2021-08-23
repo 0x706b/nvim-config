@@ -31,6 +31,14 @@ require('packer').startup(function ()
   use 'junegunn/fzf.vim'
   use 'antoinemadec/coc-fzf'
 
+  use {
+    "romgrk/barbar.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require'config.barbar'
+    end
+  }
+
   -- use {
   --   'neovim/nvim-lspconfig',
   --   config = function ()
