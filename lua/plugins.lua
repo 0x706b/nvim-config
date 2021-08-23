@@ -20,7 +20,7 @@ require('packer').startup(function ()
   use 'Quramy/vim-js-pretty-template'
 
   use 'Raimondi/delimitMate'
-  use 'Yggdroot/indentLine'
+  -- use 'Yggdroot/indentLine'
   use 'preservim/nerdcommenter'
   use 'ryanoasis/vim-devicons'
   use 'tpope/vim-surround'
@@ -36,6 +36,13 @@ require('packer').startup(function ()
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require'config.barbar'
+    end
+  }
+
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require'config.indent-blankline'
     end
   }
 
