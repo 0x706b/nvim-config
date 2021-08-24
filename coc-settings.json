@@ -171,6 +171,8 @@
     }
   },
   "list.previewSplitRight": true,
+  "Lua.telemetry.enable": false,
+  "Lua.diagnostics.globals": ["vim"],
   "prettier.eslintIntegration": true,
   "prettier.statusItemText": "",
   "prettier.onlyUseLocalVersion": true,

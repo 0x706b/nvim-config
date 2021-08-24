@@ -29,9 +29,8 @@ nmap <silent> <leader>xx :<C-u>CocFzfList diagnostics --current-buf<CR>
 nmap <silent> <leader>xc :<C-u>CocFzfList commands<CR>
 
 " Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * if !coc#util#has_float() | call CocAction('doHover') | endif
 autocmd CursorHold * silent call CocActionAsync('highlight')
-autocmd CursorHoldI * sil call CocActionAsync('showSignatureHelp')
+" autocmd CursorHoldI * sil call CocActionAsync('showSignatureHelp')
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 nmap <leader><leader>p  <Plug>(coc-codeaction-line)
