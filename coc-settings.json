@@ -219,5 +219,5 @@
   "suggest.enablePreview": true,
   "suggest.maxPreviewWidth": 200,
   "typescript.showUnused": false,
-  "typescript.suggest.completeFunctionCalls": false,
+  "typescript.suggest.completeFunctionCalls": false
 }
