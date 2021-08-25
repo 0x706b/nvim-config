@@ -31,7 +31,11 @@
         "message": "${message} [${ruleId}]",
         "security": "severity"
       },
-      "securities": ["error", "warning", "info"]
+      "securities": [
+        "error",
+        "warning",
+        "info"
+      ]
     }
   },
   "diagnostic-languageserver.filetypes": {
@@ -170,9 +174,13 @@
       ]
     }
   },
+  "hover.floatMaxWidth": 200,
   "list.previewSplitRight": true,
   "Lua.telemetry.enable": false,
-  "Lua.diagnostics.globals": ["vim"],
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
+  "notification.maxWidth": 200,
   "prettier.eslintIntegration": true,
   "prettier.statusItemText": "",
   "prettier.onlyUseLocalVersion": true,
@@ -180,7 +188,7 @@
   "python.linting.flake8Enabled": true,
   "python.terminal.activateEnvironment": false,
   "signature.preferShownAbove": false,
-  "signature.maxWindowWidth": 100,
+  "signature.maxWindowWidth": 200,
   "suggest.completionItemKindLabels": {
     "class": "",
     "color": "",
@@ -209,8 +217,7 @@
     "variable": ""
   },
   "suggest.enablePreview": true,
-  "suggest.maxPreviewWidth": 100,
+  "suggest.maxPreviewWidth": 200,
   "typescript.showUnused": false,
   "typescript.suggest.completeFunctionCalls": false,
-  "tsserver.disableAutomaticTypeAcquisition": true
 }
