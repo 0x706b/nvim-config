@@ -44,8 +44,9 @@ local lsp_signature_config = {
   border = 'rounded',
   hint_enable = false,
   floating_window = true,
-  fix_pos = true,
   hi_parameter = 'Title',
+  padding = ' ',
+  toggle_key = '<M-x>'
 }
 
 local function get_node_modules(root_dir)
