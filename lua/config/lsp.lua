@@ -1,5 +1,5 @@
-local lsp_status = require 'lsp-status'
 local lspconfig = require 'lspconfig'
+local saga = require 'lspsaga'
 local m = require 'util.keymap'
 
 local n, i, t, o, v, esc = "n", "i", "t", "o", "v", "<esc>"
@@ -18,8 +18,6 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     'additionalTextEdits',
   }
 }
-
-capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -41,18 +39,16 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   }
 )
 
--- vim.api.nvim_command("autocmd CursorHoldI * lua vim.lsp.buf.signature_help()")
-
 local lsp_signature_config = {
   bind = true,
   border = 'rounded',
   hint_enable = false,
   floating_window = true,
   fix_pos = true,
+  hi_parameter = 'Title',
 }
 
 local function get_node_modules(root_dir)
-  -- util.find_node_modules_ancestor()
   local root_node = root_dir .. "/node_modules"
   local stats = uv.fs_stat(root_node)
   if stats == nil then
@@ -62,12 +58,8 @@ local function get_node_modules(root_dir)
   end
 end
 
-local on_attach = function (client)
-  --[[
-     [ require 'lsp_signature'.on_attach(lsp_signature_config)
-     ]]
-  lsp_status.on_attach(client)
-  lsp_status.register_progress()
+local on_attach = function (client, bufnr)
+  require 'lsp_signature'.on_attach(lsp_signature_config)
 
   mapbuf(n, '<leader>p', "<cmd>lua vim.lsp.buf.code_action()<CR>", silnoremap)
   mapbuf(v, '<leader>p', "<cmd>lua vim.lsp.buf.range_code_action()<CR>", silnoremap)
@@ -80,6 +72,7 @@ local on_attach = function (client)
   end
 
   -- vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.diagnostic.show_position_diagnostics({ border = 'rounded', focusable = false })")
+  vim.api.nvim_command("autocmd CursorHold  <buffer> lua require'lspsaga.diagnostic'.show_cursor_diagnostics()")
   vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()")
   vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()")
   vim.api.nvim_command("autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()")
@@ -87,24 +80,45 @@ local on_attach = function (client)
 
 end
 
+saga.init_lsp_saga {
+  use_saga_diagnostic_sign = false,
+  border_style = 'round',
+  code_action_prompt = {
+    enable = false
+  }
+}
+
 lspconfig.tsserver.setup {
   capabilities = capabilities,
   debounce_text_changes = 100,
-  on_attach = on_attach
+  on_attach = function (client, bufnr)
+    if client.config.flags then
+      client.config.flags.allow_incremental_sync = true
+    end
+    client.resolved_capabilities.document_formatting = false
+    on_attach(client, bufnr)
+  end
 }
 
 lspconfig.diagnosticls.setup {
-  capabilities = capabilities,
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
   on_attach = on_attach,
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'scss'},
   init_options = {
     linters = {
-      eslint = {
+      eslint_d = {
         command = 'eslint_d',
-        rootPatterns = { '.git' },
+        rootPatterns = {
+          '.eslintrc',
+          '.eslintrc.cjs',
+          '.eslintrc.js',
+          '.eslintrc.json',
+          '.eslintrc.yaml',
+          '.eslintrc.yml',
+        },
         debounce = 100,
         args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-        sourceName = 'eslint',
+        sourceName = 'eslint_d',
         parseJson = {
           errorsRoot = '[0].messages',
           line = 'line',
@@ -118,20 +132,27 @@ lspconfig.diagnosticls.setup {
       }
     },
     filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
+      javascript = 'eslint_d',
+      javascriptreact = 'eslint_d',
+      typescript = 'eslint_d',
+      typescriptreact = 'eslint_d',
     },
     formatters = {
       prettier_eslint = {
         command = 'prettier-eslint',
-        args = { '--stdin', '--stdin-filepath', '%filename' },
-        rootPatterns = { '.git' },
+        args = { '--prettier-last', '--stdin', '--stdin-filepath', '%filepath' },
+        rootPatterns = {
+          '.eslintrc',
+          '.eslintrc.cjs',
+          '.eslintrc.js',
+          '.eslintrc.json',
+          '.eslintrc.yaml',
+          '.eslintrc.yml',
+        },
       },
       prettier = {
         command = 'prettier',
-        args = { '--stdin-filepath', '%filename' }
+        args = { '--stdin', '--stdin-filepath', '%filepath' }
       }
     },
     formatFiletypes = {
@@ -260,14 +281,15 @@ end
 vim.lsp.diagnostic.set_signs = set_signs_limited
 
 local maps = {
-  { n, "gd", ":lua require'telescope.builtin'.lsp_definitions()<CR>", silent },
-  { n, "gi", ":lua require'telescope.builtin'.lsp_implementations()<CR>", silent },
-  { n, "gy", ":lua vim.lsp.buf.type_definition()<CR>", silent },
-  { n, "gr", ":lua require'telescope.builtin'.lsp_references()<CR>", silent },
-  { n, "<A-d>", ":lua require'telescope.builtin'.lsp_workspace_diagnostics()<CR>", silent },
-  { n, "K", ":lua vim.lsp.buf.hover({ border = 'rounded' })<CR>", silent },
-  { n, 'L', ":lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'rounded', focusable = false })<CR>", silnoremap },
-  { n, 'ff', ":lua require'telescope.builtin'.find_files()<CR>", silent }
+  { n, "gd", "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>", silent },
+  { n, "gi", "<cmd>lua require'telescope.builtin'.lsp_implementations()<CR>", silent },
+  { n, "gy", "<cmd>lua vim.lsp.buf.type_definition()<CR>", silent },
+  { n, "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<CR>", silent },
+  { n, "<A-d>", "<cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<CR>", silent },
+  { n, "K", "<cmd>lua require'lspsaga.hover'.render_hover_doc()<CR>", silent },
+  { n, 'ff', "<cmd>lua require'telescope.builtin'.find_files()<CR>", silent },
+  { n, '<leader>p', "<cmd>lua require'lspsaga.codeaction'.code_action()<CR>", silnoremap },
+  { n, '<leader>r', "<cmd>lua require'lspsaga.rename'.rename()<CR>", silnoremap }
 }
 
 m.keymap(maps)

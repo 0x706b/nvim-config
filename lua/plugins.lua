@@ -30,6 +30,8 @@ require('packer').startup(function (use)
     end
   }
 
+  use 'MaxMEllon/vim-jsx-pretty'
+
   use 'othree/yajs.vim'
   use 'Quramy/vim-js-pretty-template'
 
@@ -92,59 +94,46 @@ require('packer').startup(function (use)
     end
   }
 
-  -- use {
-  --   'neovim/nvim-lspconfig',
-  --   config = function ()
-  --     require 'config.lsp'
-  --     require 'config.lspkind'.init()
-  --   end
-  -- }
+  use {
+    'neovim/nvim-lspconfig',
+    config = function ()
+      require 'config.lsp'
+      require 'config.lspkind'.init()
+    end
+  }
 
-  -- use {
-  --   'hrsh7th/nvim-compe',
-  --   config = function () require 'config.nvim_compe' end,
-  --   requires = { {'hrsh7th/vim-vsnip', opt = true} }
-  -- }
+  use {
+    'hrsh7th/nvim-compe',
+    config = function () require 'config.nvim_compe' end,
+    requires = { {'hrsh7th/vim-vsnip'} }
+  }
 
-  -- use {
-  --   'folke/trouble.nvim',
-  --   requires = 'kyazdani42/nvim-web-devicons',
-  --   config = function()
-  --     require'config.trouble_'
-  --   end
-  -- }
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require'config.trouble_'
+    end
+  }
 
-  -- use {
-  --   'creativenull/diagnosticls-configs-nvim',
-  --   requires = { 'neovim/nvim-lspconfig' },
-  --   config = function ()
-  --     require 'config.diagnosticls'
-  --   end
-  -- }
+  use '0x706b/lsp_signature.nvim'
 
-  -- use {
-  --   'nvim-lua/lsp-status.nvim',
-  --   config = function ()
-  --     require 'config.lsp_status'.activate()
-  --   end
-  -- }
+  use '0x706b/lspsaga.nvim'
 
-  -- use 'ray-x/lsp_signature.nvim'
+  use {
+    'RishabhRD/nvim-lsputils',
+    requires = { 'RishabhRD/popfix' },
+    config = function ()
+      require 'config.lsp_utils'
+    end
+  }
 
-  -- use {
-  --   'RishabhRD/nvim-lsputils',
-  --   requires = { 'RishabhRD/popfix' },
-  --   config = function ()
-  --     require 'config.lsp_utils'
-  --   end
-  -- }
-
-  -- use {
-  --   'nvim-telescope/telescope.nvim',
-  --   requires = { {'nvim-lua/plenary.nvim'} },
-  --   config = function ()
-  --     require 'config.telescope_'
-  --   end
-  -- }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function ()
+      require 'config.telescope_'
+    end
+  }
 
 end)

@@ -189,6 +189,8 @@
   "python.terminal.activateEnvironment": false,
   "signature.preferShownAbove": false,
   "signature.maxWindowWidth": 200,
+  "suggest.keepCompleteopt": true,
+  "suggest.autoTrigger": "none",
   "suggest.completionItemKindLabels": {
     "class": "",
     "color": "",

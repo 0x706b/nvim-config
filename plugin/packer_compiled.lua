@@ -111,6 +111,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
   monotone = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/monotone"
@@ -120,6 +128,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/nerdcommenter"
   },
+  ["nvim-compe"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22config.nvim_compe\frequire\0" },
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/nvim-compe"
+  },
+  ["nvim-lspconfig"] = {
+    config = { "\27LJ\2\nR\0\0\3\0\4\0\t6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0029\0\3\0B\0\1\1K\0\1\0\tinit\19config.lspkind\15config.lsp\frequire\0" },
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lsputils"] = {
+    config = { "\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21config.lsp_utils\frequire\0" },
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -127,6 +150,24 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  popfix = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/popfix"
+  },
+  ["telescope.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22config.telescope_\frequire\0" },
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20config.trouble_\frequire\0" },
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
   ["vim-airline"] = {
     config = { "\27LJ\2\n]\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0-source ~/.config/nvim/config/airline.vim\17nvim_command\bapi\bvim\0" },
@@ -154,9 +195,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/vim-js-pretty-template"
   },
+  ["vim-jsx-pretty"] = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["yajs.vim"] = {
     loaded = true,
@@ -170,22 +219,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: delimitMate
-time([[Config for delimitMate]], true)
-try_loadstring("\27LJ\2\n`\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0K\0\1\0\29delimitMate_expand_space\26delimitMate_expand_cr\6g\bvim\0", "config", "delimitMate")
-time([[Config for delimitMate]], false)
--- Config for: vim-airline
-time([[Config for vim-airline]], true)
-try_loadstring("\27LJ\2\n]\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0-source ~/.config/nvim/config/airline.vim\17nvim_command\bapi\bvim\0", "config", "vim-airline")
-time([[Config for vim-airline]], false)
--- Config for: barbar.nvim
-time([[Config for barbar.nvim]], true)
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18config.barbar\frequire\0", "config", "barbar.nvim")
-time([[Config for barbar.nvim]], false)
--- Config for: better-escape.vim
-time([[Config for better-escape.vim]], true)
-try_loadstring("\27LJ\2\nf\0\0\2\0\5\0\t6\0\0\0009\0\1\0)\1,\1=\1\2\0006\0\0\0009\0\1\0005\1\4\0=\1\3\0K\0\1\0\1\2\0\0\ajj\27better_escape_shortcut\27better_escape_interval\6g\bvim\0", "config", "better-escape.vim")
-time([[Config for better-escape.vim]], false)
 -- Config for: yats.vim
 time([[Config for yats.vim]], true)
 try_loadstring("\27LJ\2\n3\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\0\0=\1\2\0K\0\1\0\22yats_host_keyword\6g\bvim\0", "config", "yats.vim")
@@ -194,22 +227,58 @@ time([[Config for yats.vim]], false)
 time([[Config for vim-easymotion]], true)
 try_loadstring("\27LJ\2\n`\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0000source ~/.config/nvim/config/easymotion.vim\17nvim_command\bapi\bvim\0", "config", "vim-easymotion")
 time([[Config for vim-easymotion]], false)
--- Config for: nerdcommenter
-time([[Config for nerdcommenter]], true)
-try_loadstring("\27LJ\2\nc\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0003source ~/.config/nvim/config/nerdcommenter.vim\17nvim_command\bapi\bvim\0", "config", "nerdcommenter")
-time([[Config for nerdcommenter]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18config.barbar\frequire\0", "config", "barbar.nvim")
+time([[Config for barbar.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22config.telescope_\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
 -- Config for: fzf.vim
 time([[Config for fzf.vim]], true)
 try_loadstring("\27LJ\2\nY\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0)source ~/.config/nvim/config/fzf.vim\17nvim_command\bapi\bvim\0", "config", "fzf.vim")
 time([[Config for fzf.vim]], false)
--- Config for: coc.nvim
-time([[Config for coc.nvim]], true)
-try_loadstring("\27LJ\2\nY\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0)source ~/.config/nvim/config/coc.vim\17nvim_command\bapi\bvim\0", "config", "coc.nvim")
-time([[Config for coc.nvim]], false)
+-- Config for: better-escape.vim
+time([[Config for better-escape.vim]], true)
+try_loadstring("\27LJ\2\nf\0\0\2\0\5\0\t6\0\0\0009\0\1\0)\1,\1=\1\2\0006\0\0\0009\0\1\0005\1\4\0=\1\3\0K\0\1\0\1\2\0\0\ajj\27better_escape_shortcut\27better_escape_interval\6g\bvim\0", "config", "better-escape.vim")
+time([[Config for better-escape.vim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20config.trouble_\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28config.indent-blankline\frequire\0", "config", "indent-blankline.nvim")
 time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22config.nvim_compe\frequire\0", "config", "nvim-compe")
+time([[Config for nvim-compe]], false)
+-- Config for: vim-airline
+time([[Config for vim-airline]], true)
+try_loadstring("\27LJ\2\n]\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0-source ~/.config/nvim/config/airline.vim\17nvim_command\bapi\bvim\0", "config", "vim-airline")
+time([[Config for vim-airline]], false)
+-- Config for: coc.nvim
+time([[Config for coc.nvim]], true)
+try_loadstring("\27LJ\2\nY\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0)source ~/.config/nvim/config/coc.vim\17nvim_command\bapi\bvim\0", "config", "coc.nvim")
+time([[Config for coc.nvim]], false)
+-- Config for: nvim-lsputils
+time([[Config for nvim-lsputils]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21config.lsp_utils\frequire\0", "config", "nvim-lsputils")
+time([[Config for nvim-lsputils]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\nR\0\0\3\0\4\0\t6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0029\0\3\0B\0\1\1K\0\1\0\tinit\19config.lspkind\15config.lsp\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: delimitMate
+time([[Config for delimitMate]], true)
+try_loadstring("\27LJ\2\n`\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0K\0\1\0\29delimitMate_expand_space\26delimitMate_expand_cr\6g\bvim\0", "config", "delimitMate")
+time([[Config for delimitMate]], false)
+-- Config for: nerdcommenter
+time([[Config for nerdcommenter]], true)
+try_loadstring("\27LJ\2\nc\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0003source ~/.config/nvim/config/nerdcommenter.vim\17nvim_command\bapi\bvim\0", "config", "nerdcommenter")
+time([[Config for nerdcommenter]], false)
 if should_profile then save_profiles() end
 
 end)
