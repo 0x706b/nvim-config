@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/delimitMate"
   },
+  everforest = {
+    loaded = true,
+    path = "/Users/peter/.local/share/nvim/site/pack/packer/start/everforest"
+  },
   fzf = {
     loaded = true,
     path = "/Users/peter/.local/share/nvim/site/pack/packer/start/fzf"
@@ -166,38 +170,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: vim-easymotion
-time([[Config for vim-easymotion]], true)
-try_loadstring("\27LJ\2\n`\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0000source ~/.config/nvim/config/easymotion.vim\17nvim_command\bapi\bvim\0", "config", "vim-easymotion")
-time([[Config for vim-easymotion]], false)
--- Config for: coc.nvim
-time([[Config for coc.nvim]], true)
-try_loadstring("\27LJ\2\nY\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0)source ~/.config/nvim/config/coc.vim\17nvim_command\bapi\bvim\0", "config", "coc.nvim")
-time([[Config for coc.nvim]], false)
 -- Config for: delimitMate
 time([[Config for delimitMate]], true)
 try_loadstring("\27LJ\2\n`\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0K\0\1\0\29delimitMate_expand_space\26delimitMate_expand_cr\6g\bvim\0", "config", "delimitMate")
 time([[Config for delimitMate]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28config.indent-blankline\frequire\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
 -- Config for: vim-airline
 time([[Config for vim-airline]], true)
 try_loadstring("\27LJ\2\n]\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0-source ~/.config/nvim/config/airline.vim\17nvim_command\bapi\bvim\0", "config", "vim-airline")
 time([[Config for vim-airline]], false)
--- Config for: yats.vim
-time([[Config for yats.vim]], true)
-try_loadstring("\27LJ\2\n3\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\0\0=\1\2\0K\0\1\0\22yats_host_keyword\6g\bvim\0", "config", "yats.vim")
-time([[Config for yats.vim]], false)
--- Config for: fzf.vim
-time([[Config for fzf.vim]], true)
-try_loadstring("\27LJ\2\nY\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0)source ~/.config/nvim/config/fzf.vim\17nvim_command\bapi\bvim\0", "config", "fzf.vim")
-time([[Config for fzf.vim]], false)
--- Config for: nerdcommenter
-time([[Config for nerdcommenter]], true)
-try_loadstring("\27LJ\2\nc\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0003source ~/.config/nvim/config/nerdcommenter.vim\17nvim_command\bapi\bvim\0", "config", "nerdcommenter")
-time([[Config for nerdcommenter]], false)
 -- Config for: barbar.nvim
 time([[Config for barbar.nvim]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18config.barbar\frequire\0", "config", "barbar.nvim")
@@ -206,6 +186,30 @@ time([[Config for barbar.nvim]], false)
 time([[Config for better-escape.vim]], true)
 try_loadstring("\27LJ\2\nf\0\0\2\0\5\0\t6\0\0\0009\0\1\0)\1,\1=\1\2\0006\0\0\0009\0\1\0005\1\4\0=\1\3\0K\0\1\0\1\2\0\0\ajj\27better_escape_shortcut\27better_escape_interval\6g\bvim\0", "config", "better-escape.vim")
 time([[Config for better-escape.vim]], false)
+-- Config for: yats.vim
+time([[Config for yats.vim]], true)
+try_loadstring("\27LJ\2\n3\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\0\0=\1\2\0K\0\1\0\22yats_host_keyword\6g\bvim\0", "config", "yats.vim")
+time([[Config for yats.vim]], false)
+-- Config for: vim-easymotion
+time([[Config for vim-easymotion]], true)
+try_loadstring("\27LJ\2\n`\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0000source ~/.config/nvim/config/easymotion.vim\17nvim_command\bapi\bvim\0", "config", "vim-easymotion")
+time([[Config for vim-easymotion]], false)
+-- Config for: nerdcommenter
+time([[Config for nerdcommenter]], true)
+try_loadstring("\27LJ\2\nc\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0003source ~/.config/nvim/config/nerdcommenter.vim\17nvim_command\bapi\bvim\0", "config", "nerdcommenter")
+time([[Config for nerdcommenter]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+try_loadstring("\27LJ\2\nY\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0)source ~/.config/nvim/config/fzf.vim\17nvim_command\bapi\bvim\0", "config", "fzf.vim")
+time([[Config for fzf.vim]], false)
+-- Config for: coc.nvim
+time([[Config for coc.nvim]], true)
+try_loadstring("\27LJ\2\nY\0\0\3\0\4\0\0066\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\1K\0\1\0)source ~/.config/nvim/config/coc.vim\17nvim_command\bapi\bvim\0", "config", "coc.nvim")
+time([[Config for coc.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28config.indent-blankline\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

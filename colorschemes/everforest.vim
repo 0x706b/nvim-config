@@ -42,4 +42,4 @@ let g:airline_theme='everforest'
 
 colorscheme everforest
 
-call everforest_custom()
+call s:everforest_custom()

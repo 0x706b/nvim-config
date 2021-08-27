@@ -4,4 +4,4 @@ EOF
 
 source ~/.config/nvim/settings.vim
 source ~/.config/nvim/mapping.vim
-source ~/.config/nvim/colorschemes/monotone.vim
+source ~/.config/nvim/colorschemes/setcolors.vim

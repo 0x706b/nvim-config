@@ -10,6 +10,8 @@ require('packer').startup(function (use)
     end
   }
 
+  use 'sainnhe/everforest'
+
   use 'vim-airline/vim-airline-themes'
 
   use {
