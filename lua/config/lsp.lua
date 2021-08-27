@@ -60,8 +60,6 @@ local function get_node_modules(root_dir)
 end
 
 local on_attach = function (client, bufnr)
-  require 'lsp_signature'.on_attach(lsp_signature_config)
-
   mapbuf(n, '<leader>p', "<cmd>lua vim.lsp.buf.code_action()<CR>", silnoremap)
   mapbuf(v, '<leader>p', "<cmd>lua vim.lsp.buf.range_code_action()<CR>", silnoremap)
 
@@ -74,10 +72,6 @@ local on_attach = function (client, bufnr)
 
   -- vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.diagnostic.show_position_diagnostics({ border = 'rounded', focusable = false })")
   vim.api.nvim_command("autocmd CursorHold  <buffer> lua require'lspsaga.diagnostic'.show_cursor_diagnostics()")
-  vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()")
-  vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()")
-  vim.api.nvim_command("autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()")
-  vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.signature_help()")
 
 end
 
@@ -93,6 +87,10 @@ lspconfig.tsserver.setup {
   capabilities = capabilities,
   debounce_text_changes = 100,
   on_attach = function (client, bufnr)
+    require 'lsp_signature'.on_attach(lsp_signature_config)
+    vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()")
+    vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()")
+    vim.api.nvim_command("autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()")
     if client.config.flags then
       client.config.flags.allow_incremental_sync = true
     end
