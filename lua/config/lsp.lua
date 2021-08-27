@@ -10,14 +10,7 @@ local function mapbuf(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 local silnoremap = {noremap = true, silent = true}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -46,7 +39,9 @@ local lsp_signature_config = {
   floating_window = true,
   hi_parameter = 'Title',
   padding = ' ',
-  toggle_key = '<M-x>'
+  toggle_key = '<M-x>',
+  zindex = 50,
+  fix_pos = true
 }
 
 local function get_node_modules(root_dir)
@@ -87,7 +82,7 @@ lspconfig.tsserver.setup {
   capabilities = capabilities,
   debounce_text_changes = 100,
   on_attach = function (client, bufnr)
-    require 'lsp_signature'.on_attach(lsp_signature_config)
+    require 'lsp_signature'.on_attach(lsp_signature_config, bufnr)
     vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()")
     vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()")
     vim.api.nvim_command("autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()")

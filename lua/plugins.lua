@@ -102,10 +102,20 @@ require('packer').startup(function (use)
     end
   }
 
+  -- use {
+  --   'hrsh7th/nvim-compe',
+  --   config = function () require 'config.nvim_compe' end,
+  --   requires = { {'hrsh7th/vim-vsnip'} }
+  -- }
+
   use {
-    'hrsh7th/nvim-compe',
-    config = function () require 'config.nvim_compe' end,
-    requires = { {'hrsh7th/vim-vsnip'} }
+    "hrsh7th/nvim-cmp",
+    config = function () require 'config.nvim_cmp' end,
+    requires = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/vim-vsnip"
+    },
   }
 
   use {
