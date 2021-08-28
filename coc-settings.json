@@ -32,9 +32,9 @@
         "security": "severity"
       },
       "securities": [
-        "error",
+        "info",
         "warning",
-        "info"
+        "error"
       ]
     }
   },
