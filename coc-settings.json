@@ -11,7 +11,9 @@
     "eslint_d": {
       "command": "eslint_d",
       "rootPatterns": [
-        ".git"
+        ".eslintrc",
+        ".eslintrc.js",
+        ".eslintrc.json"
       ],
       "debounce": 100,
       "args": [
@@ -38,10 +40,42 @@
       ]
     }
   },
+  "diagnostic-languageserver.formatters": {
+    "prettier-eslint_d": {
+      "command": "prettier-eslint_d",
+      "args": [
+        "%filepath"
+      ]
+    },
+    "prettier": {
+      "command": "prettier",
+      "args": [
+        "--stdin-filepath",
+        "%filepath"
+      ]
+    },
+    "eslint_d": {
+      "command": "eslint_d",
+      "args": [
+        "--stdin",
+        "--stdin-filename",
+        "%filepath",
+        "--fix-to-stdout"
+      ]
+    }
+  },
   "diagnostic-languageserver.filetypes": {
     "typescript": "eslint_d",
     "typescriptreact": "eslint_d"
   },
+  "diagnostic-languageserver.formatFiletypes": {
+    "typescript": "prettier-eslint_d",
+    "typescriptreact": "prettier-eslint_d",
+    "css": "prettier",
+    "json": "prettier"
+  },
+  "diagnostic-languageserver.trace.server": "verbose",
+  "diagnostic-languageserver.debug": true,
   "explorer.file.reveal.auto": true,
   "explorer.floating.border.chars": [
     "─",
@@ -219,5 +253,6 @@
   "suggest.enablePreview": true,
   "suggest.maxPreviewWidth": 200,
   "typescript.showUnused": false,
-  "typescript.suggest.completeFunctionCalls": false
+  "typescript.suggest.completeFunctionCalls": false,
+  "tsserver.maxTsServerMemory": 4000
 }

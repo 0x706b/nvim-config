@@ -6,14 +6,13 @@ let g:coc_global_extensions = [
 \  'coc-html',
 \  'coc-json',
 \  'coc-yank',
-\  'coc-prettier',
-\  'coc-eslint',
 \  'coc-rls',
 \  'coc-python',
 \  'coc-snippets',
 \  'coc-highlight',
 \  'coc-lists',
 \  'coc-explorer',
+\  '@0x706b/coc-diagnostic'
 \  ]
 
 let g:coc_borderchars = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
@@ -22,8 +21,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-vmap <leader><leader>f  <Plug>(coc-format-selected)
-nmap <leader><leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 nmap <silent> <leader>xx :<C-u>CocFzfList diagnostics --current-buf<CR>
 nmap <silent> <leader>xc :<C-u>CocFzfList commands<CR>
@@ -33,8 +32,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " autocmd CursorHoldI * sil call CocActionAsync('showSignatureHelp')
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-nmap <leader><leader>p  <Plug>(coc-codeaction-line)
-nmap <leader><leader>r  <Plug>(coc-rename)
+nmap <leader>p  <Plug>(coc-codeaction-line)
+nmap <leader>r  <Plug>(coc-rename)
 imap <silent><c-space> call CocActionAsync('showSignatureHelp')
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
@@ -73,9 +72,9 @@ function! s:show_documentation()
   endif
 endfunction
 
-nmap <silent><leader><leader>ee :CocCommand explorer --position floating --floating-width 100 --floating-height 30 --quit-on-open<CR>
-nmap <silent><leader><leader>el :CocCommand explorer --position left<CR>
-nmap <silent><leader><leader>er :CocCommand explorer --position right<CR>
+nmap <silent><leader>ee :CocCommand explorer --position floating --floating-width 100 --floating-height 30 --quit-on-open<CR>
+nmap <silent><leader>el :CocCommand explorer --position left<CR>
+nmap <silent><leader>er :CocCommand explorer --position right<CR>
 
 nmap <leader><leader>l :call CocAction('toggleExtension', 'coc-eslint')<CR>
 nmap <leader><leader>f :call CocAction('format')<CR>
