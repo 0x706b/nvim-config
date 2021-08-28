@@ -74,8 +74,6 @@
     "css": "prettier",
     "json": "prettier"
   },
-  "diagnostic-languageserver.trace.server": "verbose",
-  "diagnostic-languageserver.debug": true,
   "explorer.file.reveal.auto": true,
   "explorer.floating.border.chars": [
     "─",
