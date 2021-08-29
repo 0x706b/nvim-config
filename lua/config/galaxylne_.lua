@@ -1,5 +1,7 @@
 local gl = require "galaxyline"
 
+gl.short_line_list = { 'coc-explorer' }
+
 local gls = gl.section
 
 local vcs = require "galaxyline.provider_vcs"
@@ -71,6 +73,18 @@ local mode_color = {
   t = colors.light_red
 }
 
+local buf_icon = {
+  help             = '  ',
+  defx             = '  ',
+  nerdtree         = '  ',
+  denite           = '  ',
+  ['vim-plug']     = '  ',
+  dbui             = '  ',
+  magit            = '  ',
+  NvimTree         = '  ',
+  ['coc-explorer'] = '  ',
+}
+
 local icons = {
   lock = '',
   pencil = ''
@@ -80,6 +94,26 @@ local hi_normal = { colors.light_gray, colors.dark_gray }
 local hi_reversed = { colors.bg, colors.light_gray }
 
 local hi_separator = { colors.light_gray, colors.dark_gray }
+
+gls.short_line_left[1] = {
+  BufferType = {
+    provider = function ()
+      return vim.bo.filetype
+    end,
+    separator = ' ',
+    separator_highlight = hi_separator,
+    highlight = {colors.gray, colors.dark_gray,'bold'}
+  }
+}
+
+gls.short_line_right[1] = {
+  BufferIcon = {
+    provider = function ()
+      return buf_icon[vim.bo.filetype] or ''
+    end,
+    highlight = {colors.gray, colors.dark_gray,'bold'}
+  }
+}
 
 local buffer_not_empty = function()
   if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
@@ -148,9 +182,13 @@ gls.left[4] = {
 gls.left[5] = {
   GitBranch = {
     provider = function ()
-      return vcs.get_git_branch() .. ' '
+      local branch = vcs.get_git_branch()
+      if branch then
+        return branch .. ' '
+      end
+      return
     end,
-    condition = vcs.check_git_workspace,
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
     highlight = {colors.bg, colors.light_gray, 'bold'},
     separator = '',
     separator_highlight = { colors.light_gray, colors.gray },
