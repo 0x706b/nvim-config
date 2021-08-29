@@ -5,7 +5,6 @@ gl.short_line_list = { 'coc-explorer' }
 local gls = gl.section
 
 local vcs = require "galaxyline.provider_vcs"
-local fileinfo = require "galaxyline.provider_fileinfo"
 
 local condition = require('galaxyline.condition')
 
@@ -95,6 +94,25 @@ local hi_reversed = { colors.bg, colors.light_gray }
 
 local hi_separator = { colors.light_gray, colors.dark_gray }
 
+local path_separator = '/'
+
+local path_to_matching_str = function (path)
+  return path:gsub('(%-)', '(%%-)'):gsub('(%.)', '(%%.)'):gsub('(%_)', '(%%_)')
+end
+
+local path_add_trailing = function (path)
+  if path:sub(-1) == path_separator then
+    return path
+  end
+
+  return path..path_separator
+end
+
+local path_relative = function (path, relative_to)
+  local p, _ = path:gsub("^" .. path_to_matching_str(path_add_trailing(relative_to)), "")
+  return p
+end
+
 gls.short_line_left[1] = {
   BufferType = {
     provider = function ()
@@ -165,7 +183,7 @@ gls.left[3] = {
     end,
     separator = '',
     separator_highlight = { colors.light_gray, colors.gray },
-    highlight = { colors.gray, colors.dark_gray } 
+    highlight = { colors.gray, colors.dark_gray }
   }
 }
 
@@ -232,7 +250,14 @@ gls.left[9] = {
 gls.left[10] = {
   FilePath = {
     provider = function ()
-      local path = vim.fn.expand('%:p')
+      local squeeze_width = vim.fn.winwidth(0) / 2
+      local path = ''
+      if squeeze_width > 80 then
+        -- path = vim.fn.expand('%:p:h:t') .. '/' .. vim.fn.expand('%:t')
+        path = path_relative(vim.fn.expand('%:p'), vim.fn.getcwd())
+      else
+        path = vim.fn.expand('%:t')
+      end
       if vim.fn.empty(path) == 1 then return '' end
       if string.len(file_readonly(icons.lock)) ~= 0 then
         return path .. file_readonly(icons.pencil)

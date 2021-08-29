@@ -24,7 +24,7 @@ packer.startup(function (use)
   use {
     'glepnir/galaxyline.nvim',
     config = function ()
-      require 'config.galaxylne'
+      require 'config.galaxyline'
     end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
