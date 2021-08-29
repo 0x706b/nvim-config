@@ -252,5 +252,6 @@
   "suggest.maxPreviewWidth": 200,
   "typescript.showUnused": false,
   "typescript.suggest.completeFunctionCalls": false,
-  "tsserver.maxTsServerMemory": 4000
+  "tsserver.maxTsServerMemory": 4000,
+  "git.enableGutters": true
 }

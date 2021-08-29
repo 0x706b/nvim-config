@@ -4,15 +4,14 @@ require('packer').startup(function (use)
   use '0x706b/monotone'
 
   use {
-    'vim-airline/vim-airline',
+    'glepnir/galaxyline.nvim',
     config = function ()
-      vim.api.nvim_command('source ~/.config/nvim/config/airline.vim')
-    end
+      require 'config.galaxylne_'
+    end,
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 
   use 'sainnhe/everforest'
-
-  use 'vim-airline/vim-airline-themes'
 
   use {
     '0x706b/coc.nvim',
@@ -89,6 +88,16 @@ require('packer').startup(function (use)
     'easymotion/vim-easymotion',
     config = function ()
       vim.api.nvim_command('source ~/.config/nvim/config/easymotion.vim')
+    end
+  }
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function ()
+      require'config.gitsigns_'
     end
   }
 
