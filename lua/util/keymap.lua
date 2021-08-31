@@ -10,7 +10,7 @@ local keymap = function(map)
 	return vim.api.nvim_set_keymap(map[1], map[2], map[3], opts)
 end
 
-local bufmap = function(map) 
+local bufmap = function(map)
 	map = map or {}
 	local opts = map[4] or {}
 	return vim.api.nvim_buf_set_keymap(bufnr, map[1], map[2], map[3], opts)

@@ -251,11 +251,8 @@ gls.left[10] = {
   FilePath = {
     provider = function ()
       local squeeze_width = vim.fn.winwidth(0) / 2
-      local path = ''
-      if squeeze_width > 80 then
-        -- path = vim.fn.expand('%:p:h:t') .. '/' .. vim.fn.expand('%:t')
-        path = path_relative(vim.fn.expand('%:p'), vim.fn.getcwd())
-      else
+      local path = path_relative(vim.fn.expand('%:p'), vim.fn.getcwd())
+      if string.len(path) > squeeze_width then
         path = vim.fn.expand('%:t')
       end
       if vim.fn.empty(path) == 1 then return '' end
