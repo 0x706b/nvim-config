@@ -183,6 +183,7 @@ gls.left[3] = {
     end,
     separator = '',
     separator_highlight = { colors.light_gray, colors.gray },
+    condition = condition.check_git_workspace,
     highlight = { colors.gray, colors.dark_gray }
   }
 }
@@ -190,7 +191,7 @@ gls.left[3] = {
 gls.left[4] = {
   GitIcon = {
     provider = function() return ' ' end,
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    condition = condition.check_git_workspace,
     separator = '<-',
     separator_highlight = { colors.bg, colors.light_gray, 'bold' },
     highlight = { colors.bg, colors.light_gray, 'bold' },
@@ -206,7 +207,7 @@ gls.left[5] = {
       end
       return
     end,
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    condition = condition.check_git_workspace,
     highlight = {colors.bg, colors.light_gray, 'bold'},
     separator = '',
     separator_highlight = { colors.light_gray, colors.gray },
@@ -218,6 +219,7 @@ gls.left[6] = {
     provider = function ()
       return ''
     end,
+    condition = condition.check_git_workspace,
     highlight = { colors.dark_gray, colors.gray },
   }
 }
@@ -250,10 +252,10 @@ gls.left[9] = {
 gls.left[10] = {
   FilePath = {
     provider = function ()
-      local squeeze_width = vim.fn.winwidth(0) / 2
+      local squeeze_width = vim.fn.winwidth(0) / 3
       local path = path_relative(vim.fn.expand('%:p'), vim.fn.getcwd())
       if string.len(path) > squeeze_width then
-        path = vim.fn.expand('%:t')
+        path = '<' .. string.sub(path, string.len(path) - squeeze_width - 1)
       end
       if vim.fn.empty(path) == 1 then return '' end
       if string.len(file_readonly(icons.lock)) ~= 0 then
