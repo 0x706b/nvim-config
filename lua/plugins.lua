@@ -49,6 +49,7 @@ packer.startup(function (use)
 
   use 'othree/yajs.vim'
   use 'Quramy/vim-js-pretty-template'
+  use 'MaxMEllon/vim-jsx-pretty'
 
   use {
     'Raimondi/delimitMate',
