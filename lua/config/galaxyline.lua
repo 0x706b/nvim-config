@@ -211,7 +211,7 @@ gls.left[8] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = condition.hide_in_width,
-    icon = ' ',
+    icon = '  ',
     highlight = {colors.b.yellow, colors.bg1},
   }
 }
@@ -219,7 +219,7 @@ gls.left[9] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
-    icon = '  ',
+    icon = '   ',
     highlight = {colors.n.red, colors.bg1},
   }
 }
@@ -234,14 +234,14 @@ gls.left[10] = {
       end
       if vim.fn.empty(path) == 1 then return '' end
       if string.len(file_readonly(icons.lock)) ~= 0 then
-        return path .. file_readonly(icons.pencil)
+        return ' ' .. path .. file_readonly(icons.pencil)
       end
       if vim.bo.modifiable then
         if vim.bo.modified then
-          return path .. ' ' .. icons.pencil .. '  '
+          return ' ' .. path .. ' ' .. icons.pencil .. '  '
         end
       end
-      return path .. ' '
+      return ' ' .. path .. ' '
     end,
     condition = buffer_not_empty,
     highlight = hi_normal
