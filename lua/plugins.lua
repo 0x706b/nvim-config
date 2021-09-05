@@ -19,7 +19,8 @@ packer.init {
 packer.startup(function (use)
   use 'wbthomason/packer.nvim'
 
-  use '0x706b/monotone'
+  use '0x706b/monotone.nvim'
+  use 'mcchrish/zenbones.nvim'
 
   use {
     'glepnir/galaxyline.nvim',
@@ -117,6 +118,19 @@ packer.startup(function (use)
     },
     config = function ()
       require'config.gitsigns'
+    end
+  }
+
+  use {
+    'rktjmp/lush.nvim'
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    requires = { 'nvim-treesitter/playground' },
+    config = function ()
+      require'config.treesitter'
     end
   }
 

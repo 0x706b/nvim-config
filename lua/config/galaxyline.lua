@@ -1,4 +1,5 @@
 local gl = require "galaxyline"
+local colors = require 'colors.current'
 
 gl.short_line_list = { 'coc-explorer' }
 
@@ -7,24 +8,6 @@ local gls = gl.section
 local vcs = require "galaxyline.provider_vcs"
 
 local condition = require('galaxyline.condition')
-
-local colors = {
-  bg = "#121111",
-  fg = "#D3CFCF",
-  dark_gray = "#222020",
-  gray = "#5F5959",
-  light_gray = "#9D9695",
-  light_red = "#D76363",
-  dark_red = "#FF2D3C",
-  green = "#7FAC71",
-  yellow = "#D7A863",
-  orange = "#FFAA23",
-  cyan = "#81A7BB",
-  blue = "#7488AD",
-  dark_purple = "#9E80BB",
-  light_purple = "#AD8ECA",
-  info = '#68B9F0'
-}
 
 local modes = {
   n = "normal",
@@ -50,26 +33,26 @@ local modes = {
 }
 
 local mode_color = {
-  n = colors.light_gray,
-  i = colors.green,
-  v = colors.cyan,
-  [""] = colors.cyan,
-  V = colors.cyan,
-  c = colors.light_red,
-  no = colors.dark_purple,
-  s = colors.orange,
-  S = colors.orange,
-  [""] = colors.orange,
-  ic = colors.yellow,
-  R = colors.light_purple,
-  Rv = colors.light_purple,
-  cv = colors.light_red,
-  ce = colors.light_red,
-  r = colors.cyan,
-  rm = colors.cyan,
-  ["r?"] = colors.cyan,
-  ["!"] = colors.light_red,
-  t = colors.light_red
+  n = colors.fg2,
+  i = colors.n.green,
+  v = colors.n.blue,
+  [""] = colors.n.blue,
+  V = colors.n.blue,
+  c = colors.n.red,
+  no = colors.n.magenta,
+  s = colors.n.yellow,
+  S = colors.n.yellow,
+  [""] = colors.n.yellow,
+  ic = colors.n.yellow,
+  R = colors.n.magenta,
+  Rv = colors.n.magenta,
+  cv = colors.n.red,
+  ce = colors.n.red,
+  r = colors.n.blue,
+  rm = colors.n.blue,
+  ["r?"] = colors.n.blue,
+  ["!"] = colors.n.red,
+  t = colors.n.red
 }
 
 local buf_icon = {
@@ -89,10 +72,10 @@ local icons = {
   pencil = ''
 }
 
-local hi_normal = { colors.light_gray, colors.dark_gray }
-local hi_reversed = { colors.bg, colors.light_gray }
+local hi_normal = { colors.fg2, colors.bg1 }
+local hi_reversed = { colors.bg, colors.fg2 }
 
-local hi_separator = { colors.light_gray, colors.dark_gray }
+local hi_separator = { colors.fg2, colors.bg1 }
 
 local path_separator = '/'
 
@@ -120,7 +103,7 @@ gls.short_line_left[1] = {
     end,
     separator = ' ',
     separator_highlight = hi_separator,
-    highlight = {colors.gray, colors.dark_gray,'bold'}
+    highlight = {colors.fg1, colors.bg1, 'bold'}
   }
 }
 
@@ -129,7 +112,7 @@ gls.short_line_right[1] = {
     provider = function ()
       return buf_icon[vim.bo.filetype] or ''
     end,
-    highlight = {colors.gray, colors.dark_gray,'bold'}
+    highlight = {colors.fg1, colors.bg1, 'bold'}
   }
 }
 
@@ -158,7 +141,7 @@ gls.left[1] = {
       vim.api.nvim_command("hi GalaxyEdge guifg=" .. mode_color[mode])
       return "▊ "
     end,
-    highlight = {colors.cyan, colors.dark_gray}
+    highlight = {colors.n.blue, colors.bg1}
   }
 }
 
@@ -172,29 +155,25 @@ gls.left[2] = {
     end,
     separator = ' ',
     separator_highlight = hi_separator,
-    highlight = {colors.light_gray, colors.dark_gray, "bold"}
+    highlight = {colors.fg2, colors.bg1, "bold"}
   }
 }
 
 gls.left[3] = {
-  SlantDown = {
-    provider = function ()
-      return ''
-    end,
-    separator = '',
-    separator_highlight = { colors.light_gray, colors.gray },
+  Slant_1 = {
+    provider = function () return '' end,
     condition = condition.check_git_workspace,
-    highlight = { colors.gray, colors.dark_gray }
+    highlight = { colors.fg2, colors.bg1 }
   }
 }
 
 gls.left[4] = {
   GitIcon = {
-    provider = function() return ' ' end,
+    provider = function() return '  ' end,
     condition = condition.check_git_workspace,
     separator = '<-',
-    separator_highlight = { colors.bg, colors.light_gray, 'bold' },
-    highlight = { colors.bg, colors.light_gray, 'bold' },
+    separator_highlight = { colors.bg, colors.fg2, 'bold' },
+    highlight = { colors.bg, colors.fg2, 'bold' },
   }
 }
 
@@ -208,19 +187,15 @@ gls.left[5] = {
       return
     end,
     condition = condition.check_git_workspace,
-    highlight = {colors.bg, colors.light_gray, 'bold'},
-    separator = '',
-    separator_highlight = { colors.light_gray, colors.gray },
+    highlight = {colors.bg, colors.fg2, 'bold'},
   }
 }
 
 gls.left[6] = {
-  SlantUp = {
-    provider = function ()
-      return ''
-    end,
+  Slant_2 = {
+    provider = function () return '' end,
     condition = condition.check_git_workspace,
-    highlight = { colors.dark_gray, colors.gray },
+    highlight = { colors.fg2, colors.bg1 }
   }
 }
 
@@ -229,7 +204,7 @@ gls.left[7] = {
     provider = 'DiffAdd',
     condition = condition.hide_in_width,
     icon = '   ',
-    highlight = {colors.green,colors.dark_gray},
+    highlight = {colors.n.green, colors.bg1},
   }
 }
 gls.left[8] = {
@@ -237,7 +212,7 @@ gls.left[8] = {
     provider = 'DiffModified',
     condition = condition.hide_in_width,
     icon = ' ',
-    highlight = {colors.orange,colors.dark_gray},
+    highlight = {colors.b.yellow, colors.bg1},
   }
 }
 gls.left[9] = {
@@ -245,7 +220,7 @@ gls.left[9] = {
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
     icon = '  ',
-    highlight = {colors.light_red,colors.dark_gray},
+    highlight = {colors.n.red, colors.bg1},
   }
 }
 
@@ -286,7 +261,7 @@ gls.mid[0] = {
       return true
     end,
     icon = ' LSP: ',
-    highlight = {colors.cyan,colors.dark_gray,'bold'}
+    highlight = {colors.b.blue, colors.bg1, 'bold'}
   }
 }
 
@@ -316,7 +291,7 @@ gls.right[3] = {
   FileIcon = {
     provider = 'FileIcon',
     condition = buffer_not_empty,
-    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.dark_gray},
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color, colors.bg1},
   },
 }
 
@@ -326,16 +301,14 @@ gls.right[4] = {
       return vim.bo.filetype .. ' '
     end,
     condition = buffer_not_empty,
-    highlight = { require('galaxyline.provider_fileinfo').get_file_icon_color, colors.dark_gray }
+    highlight = { require('galaxyline.provider_fileinfo').get_file_icon_color, colors.bg1 }
   }
 }
 
 gls.right[5] = {
-  SlantUpRev = {
-    provider = function ()
-      return ''
-    end,
-    highlight = { colors.gray, colors.dark_gray },
+  Slant_3 = {
+    provider = function () return '' end,
+    highlight = { colors.fg2, colors.bg1 }
   }
 }
 
@@ -344,29 +317,25 @@ gls.right[6] = {
     provider = function ()
       local line = vim.fn.line('.')
       local column = vim.fn.col('.')
-      return string.format(" %3d : %2d ", line, column)
+      return string.format("  %3d : %2d ", line, column)
     end,
-    separator = '',
-    separator_highlight = { colors.light_gray, colors.gray },
     highlight = hi_reversed,
   },
 }
 
 gls.right[7] = {
-  SlantDownRev = {
-    provider = function ()
-      return ''
-    end,
-    highlight = { colors.light_gray, colors.gray },
+  Slant_4 = {
+    provider = function () return '' end,
+    highlight = { colors.fg2, colors.bg1 }
   }
 }
 
 gls.right[8] = {
   PerCent = {
     provider = 'LinePercent',
-    separator = '',
-    separator_highlight = { colors.gray, colors.dark_gray },
-    highlight = {colors.light_gray,colors.dark_gray,'bold'},
+    separator = ' ',
+    separator_highlight = hi_separator,
+    highlight = { colors.fg2, colors.bg1, 'bold' },
   }
 }
 
@@ -374,18 +343,18 @@ gls.right[9] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
     icon = ' ',
-    highlight = {colors.bg,colors.dark_red},
+    highlight = {colors.bg, colors.b.red},
     separator = '',
-    separator_highlight = { colors.dark_gray, colors.dark_red }
+    separator_highlight = { colors.bg1, colors.b.red }
   }
 }
 gls.right[10] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = ' ',
-    highlight = {colors.bg,colors.orange},
+    highlight = {colors.bg, colors.b.yellow},
     separator = '',
-    separator_highlight = { colors.dark_red, colors.orange }
+    separator_highlight = { colors.b.red, colors.b.yellow }
   }
 }
 
@@ -393,8 +362,8 @@ gls.right[11] = {
   DiagnosticHint = {
     provider = 'DiagnosticHint',
     icon = ' ',
-    highlight = {colors.info,colors.dark_gray},
+    highlight = { colors.b.blue, colors.bg1 },
     separator = '',
-    separator_highlight = { colors.orange, colors.dark_gray }
+    separator_highlight = { colors.b.yellow, colors.bg1 }
   }
 }

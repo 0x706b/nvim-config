@@ -1,5 +1,6 @@
 let g:everforest_background = 'hard'
 let g:everforest_sign_column_background = 'none'
+let g:everforest_enable_italic = 1
 
 set background=dark
 
@@ -36,6 +37,11 @@ function! s:everforest_custom() abort
   hi! link tsxCloseString Delimiter
   hi! link tsxAttrib Normal
   hi! link tsxEqual Delimiter
+  hi! link typescriptExport Purple
+  hi! link typescriptFuncKeyword Orange
+  hi! link Conditional Red
+  hi! link Repeat Red
+  hi! link typescriptVariableDeclaration Normal
 endfunction
 
 let g:airline_theme='everforest'
