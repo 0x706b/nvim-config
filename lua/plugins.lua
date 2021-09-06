@@ -19,8 +19,9 @@ packer.init {
 packer.startup(function (use)
   use 'wbthomason/packer.nvim'
 
-  use '0x706b/monotone.nvim'
+  use '~/dev/monotone.nvim'
   use 'mcchrish/zenbones.nvim'
+  use '0x706b/crumbling.nvim'
 
   use {
     'glepnir/galaxyline.nvim',

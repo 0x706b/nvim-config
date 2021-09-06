@@ -193,7 +193,7 @@ gls.left[5] = {
 
 gls.left[6] = {
   Slant_2 = {
-    provider = function () return '' end,
+    provider = function () return ' ' end,
     condition = condition.check_git_workspace,
     highlight = { colors.fg2, colors.bg1 }
   }
@@ -203,24 +203,24 @@ gls.left[7] = {
   DiffAdd = {
     provider = 'DiffAdd',
     condition = condition.hide_in_width,
-    icon = '   ',
-    highlight = {colors.n.green, colors.bg1},
+    icon = '  ',
+    highlight = {colors.git.add, colors.bg1},
   }
 }
 gls.left[8] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = condition.hide_in_width,
-    icon = '  ',
-    highlight = {colors.b.yellow, colors.bg1},
+    icon = ' ',
+    highlight = {colors.git.change, colors.bg1},
   }
 }
 gls.left[9] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
-    icon = '   ',
-    highlight = {colors.n.red, colors.bg1},
+    icon = '  ',
+    highlight = {colors.git.delete, colors.bg1},
   }
 }
 

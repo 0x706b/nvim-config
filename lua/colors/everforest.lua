@@ -21,5 +21,10 @@ return {
     blue = palette.blue[1],
     green = palette.green[1],
     magenta = palette.purple[1]
+  },
+  git = {
+    add = palette.green[1],
+    change = palette.blue[1],
+    delete = palette.red[1]
   }
 }

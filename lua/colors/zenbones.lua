@@ -21,6 +21,11 @@ local colors = {
     red = z.rose,
     blue = z.sky,
     magenta = z.blossom
+  },
+  git = {
+    add = z.leaf,
+    change = z.wood,
+    delete = z.rose
   }
 }
 
