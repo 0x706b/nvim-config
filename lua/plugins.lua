@@ -22,6 +22,7 @@ packer.startup(function (use)
   use '0x706b/monotone.nvim'
   use 'mcchrish/zenbones.nvim'
   use '0x706b/crumbling.nvim'
+  use '0x706b/parchment.nvim'
 
   use {
     'glepnir/galaxyline.nvim',
