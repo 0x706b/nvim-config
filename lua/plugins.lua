@@ -138,4 +138,11 @@ packer.startup(function (use)
     end
   }
 
+  use {
+    "numtostr/FTerm.nvim",
+    config = function ()
+      require'config.fterm'
+    end
+  }
+
 end)
