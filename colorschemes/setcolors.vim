@@ -1,1 +1,1 @@
-source ~/.config/nvim/colorschemes/parchment.vim
+source ~/.config/nvim/colorschemes/crumbling.vim

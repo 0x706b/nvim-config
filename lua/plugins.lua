@@ -23,6 +23,8 @@ packer.startup(function (use)
   use 'mcchrish/zenbones.nvim'
   use '0x706b/crumbling.nvim'
   use '0x706b/parchment.nvim'
+  use 'sainnhe/sonokai'
+  use 'lifepillar/vim-solarized8'
 
   use {
     'glepnir/galaxyline.nvim',
