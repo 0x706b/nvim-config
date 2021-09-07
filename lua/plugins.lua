@@ -37,7 +37,7 @@ packer.startup(function (use)
   use 'sainnhe/everforest'
 
   use {
-    '0x706b/coc.nvim',
+    'neoclide/coc.nvim',
     branch = 'master',
     run = 'yarn install --frozen-lockfile',
     config = function ()

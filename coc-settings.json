@@ -148,6 +148,18 @@
     "x": "cutFile",
     "y": "copyFilepath"
   },
+  "hover.floatConfig": {
+    "border": true,
+    "maxWidth": 100
+  },
+  "signature.floatConfig": {
+    "border": true,
+    "maxWidth": 100
+  },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "maxWidth": 100
+  },
   "languageserver": {
     "ccls": {
       "command": "ccls",
