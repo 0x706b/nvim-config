@@ -1,17 +1,17 @@
 function s:setup()
    let fg_target = 'red'
 
-   let fg_current  = s:fg(['Normal'], '#efefef')
-   let fg_visible  = s:fg(['TabLineSel'], '#efefef')
-   let fg_inactive = s:fg(['TabLineFill'], '#888888')
+   let fg_current  = s:fg(['Normal'], '')
+   let fg_visible  = s:fg(['TabLineSel'], '')
+   let fg_inactive = s:fg(['TabLineFill'], '')
 
-   let fg_modified = s:fg(['WarningMsg'], '#E5AB0E')
-   let fg_special  = s:fg(['Delimiter'], '#599eff')
-   let fg_subtle   = s:fg(['Type'], '#555555')
+   let fg_modified = s:fg(['WarningMsg'], '')
+   let fg_special  = s:fg(['Delimiter'], '')
+   let fg_subtle   = s:fg(['Type'], '')
 
-   let bg_current  = s:bg(['CursorLine'], 'none')
-   let bg_visible  = s:bg(['TabLineSel', 'Normal'], 'none')
-   let bg_inactive = s:bg(['Normal', 'StatusLine'], 'none')
+   let bg_current  = s:bg(['TabLineSel'], '')
+   let bg_visible  = s:bg(['TabLine', 'Normal'], '')
+   let bg_inactive = s:bg(['TabLine', 'Normal'], '')
 
    "      Current: current buffer
    "      Visible: visible but not current buffer

@@ -1,1 +1,1 @@
-return require 'colors.crumbling'
+return require 'colors.monotone'

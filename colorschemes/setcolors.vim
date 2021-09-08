@@ -1,1 +1,1 @@
-source ~/.config/nvim/colorschemes/crumbling.vim
+source ~/.config/nvim/colorschemes/monotone.vim
