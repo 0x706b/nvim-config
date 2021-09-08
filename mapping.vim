@@ -18,5 +18,6 @@ nnoremap <silent> <leader>j :wincmd j<CR>
 
 map <A-l> $
 map <A-h> 0
+map <A-j> %
 
 nnoremap <A-o> o<ESC>ko<CR>
