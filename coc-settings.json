@@ -1,19 +1,19 @@
 {
   "coc.preferences.colorSupport": true,
   "coc.preferences.semanticTokensHighlights": true,
-  "diagnostic.maxWindowWidth": 100,
-  "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.warningSign": "",
   "diagnostic-languageserver.mergeConfig": true,
+  "diagnostic-languageserver.trace.server": "verbose",
   "diagnostic-languageserver.linters": {
     "eslint_d": {
       "command": "eslint_d",
       "rootPatterns": [
         ".eslintrc",
         ".eslintrc.js",
-        ".eslintrc.json"
+        ".eslintrc.json",
+        ".eslint.config.js"
       ],
       "debounce": 100,
       "args": [
@@ -45,6 +45,14 @@
       "command": "prettier-eslint_d",
       "args": [
         "%filepath"
+      ],
+      "rootPatterns": [
+        ".eslintrc",
+        ".eslintrc.js",
+        ".eslintrc.json",
+        ".prettierrc",
+        ".prettierrc.js",
+        ".prettierrc.json"
       ]
     },
     "prettier": {
