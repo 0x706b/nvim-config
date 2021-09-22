@@ -25,6 +25,7 @@ packer.startup(function (use)
   use '0x706b/parchment.nvim'
   use 'sainnhe/sonokai'
   use 'lifepillar/vim-solarized8'
+  use 'rose-pine/neovim'
 
   use {
     'glepnir/galaxyline.nvim',
