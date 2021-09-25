@@ -17,6 +17,5 @@ require'indent_blankline'.setup {
     'object',
     'statement',
     'ternary'
-  },
-  -- use_treesitter = true
+  }
 }

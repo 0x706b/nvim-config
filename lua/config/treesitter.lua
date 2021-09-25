@@ -4,6 +4,10 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     disable = { 'typescript', 'tsx' }
+  },
+  indent = {
+    enable = true,
+    disable = { 'typescript', 'tsx' }
   }
 }
 

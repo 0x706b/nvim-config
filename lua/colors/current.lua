@@ -1,1 +1,1 @@
-return require 'colors.rose_pine_moon'
+return require 'colors.everforest'

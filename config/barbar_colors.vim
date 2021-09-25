@@ -1,8 +1,8 @@
 function s:setup()
    let fg_target = 'red'
 
-   let fg_current  = s:fg(['Normal'], '')
-   let fg_visible  = s:fg(['TabLineSel'], '')
+   let fg_current  = s:fg(['TabLineSel'], '')
+   let fg_visible  = s:fg(['Normal'], '')
    let fg_inactive = s:fg(['TabLineFill'], '')
 
    let fg_modified = s:fg(['WarningMsg'], '')
