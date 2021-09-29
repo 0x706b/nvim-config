@@ -1,1 +1,1 @@
-source ~/.config/nvim/colorschemes/everforest.vim
+source ~/.config/nvim/colorschemes/monotone.vim

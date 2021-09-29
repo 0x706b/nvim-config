@@ -1,1 +1,1 @@
-return require 'colors.everforest'
+return require 'colors.monotone'
