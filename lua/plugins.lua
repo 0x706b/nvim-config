@@ -55,7 +55,7 @@ packer.startup(function (use)
 
   use 'othree/yajs.vim'
   use 'Quramy/vim-js-pretty-template'
-  use 'MaxMEllon/vim-jsx-pretty'
+  use '0x706b/vim-jsx-pretty'
   use 'styled-components/vim-styled-components'
 
   use {
