@@ -37,6 +37,8 @@ packer.startup(function (use)
 
   use 'sainnhe/everforest'
 
+  use 'purescript-contrib/purescript-vim'
+
   use {
     'neoclide/coc.nvim',
     branch = 'master',
@@ -55,8 +57,8 @@ packer.startup(function (use)
 
   use 'othree/yajs.vim'
   use 'Quramy/vim-js-pretty-template'
-  use '0x706b/vim-jsx-pretty'
-  use 'styled-components/vim-styled-components'
+  use 'MaxMEllon/vim-jsx-pretty'
+  -- use 'styled-components/vim-styled-components'
 
   use {
     'Raimondi/delimitMate',

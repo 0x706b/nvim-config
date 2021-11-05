@@ -7,8 +7,8 @@ set lazyredraw
 set nohlsearch
 set tabstop=2
 set shiftwidth=2
-set autoindent
-set smartindent
+" set autoindent
+" set smartindent
 set expandtab
 set mouse=a
 set cmdheight=2
@@ -21,7 +21,7 @@ set hidden
 " set autowrite
 let mapleader = "\<Space>"
 
-filetype plugin indent on
+" filetype plugin indent on
 
 set cursorline
 autocmd WinEnter * setlocal cursorline
