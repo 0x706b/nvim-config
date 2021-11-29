@@ -1,1 +1,1 @@
-colorscheme zenbones-lush
+colorscheme zenbones

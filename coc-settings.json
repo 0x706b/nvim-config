@@ -160,6 +160,7 @@
     "border": true,
     "maxWidth": 100
   },
+  "rust.build_on_save": false,
   "signature.floatConfig": {
     "border": true,
     "maxWidth": 100

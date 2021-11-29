@@ -4,7 +4,7 @@ let g:everforest_enable_italic = 1
 
 set background=dark
 
-function! s:everforest_custom() abort
+function s:everforest_custom()
   let l:configuration = everforest#get_configuration()
   let l:palette = everforest#get_palette(l:configuration.background)
   call everforest#highlight('CursorLineNr', l:palette.grey2, l:palette.bg1)
@@ -55,5 +55,4 @@ endfunction
 let g:airline_theme='everforest'
 
 colorscheme everforest
-
 call s:everforest_custom()

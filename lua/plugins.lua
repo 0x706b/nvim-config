@@ -27,6 +27,8 @@ packer.startup(function (use)
   use 'lifepillar/vim-solarized8'
   use 'rose-pine/neovim'
 
+  use '0x706b/zenburn.nvim'
+
   use {
     'glepnir/galaxyline.nvim',
     config = function ()

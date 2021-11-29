@@ -46,3 +46,5 @@ autocmd FileType typescript JsPreTmpl
 
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+" autocmd BufEnter * source /Users/peter/.config/nvim/colorschemes/setcolors.vim
