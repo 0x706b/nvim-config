@@ -19,7 +19,7 @@ packer.init {
 packer.startup(function (use)
   use 'wbthomason/packer.nvim'
 
-  use '0x706b/monotone.nvim'
+  use '~/dev/monotone.nvim'
   use 'mcchrish/zenbones.nvim'
   use '0x706b/crumbling.nvim'
   use '0x706b/parchment.nvim'
@@ -41,14 +41,16 @@ packer.startup(function (use)
 
   use 'purescript-contrib/purescript-vim'
 
-  use {
-    'neoclide/coc.nvim',
-    branch = 'master',
-    run = 'yarn install --frozen-lockfile',
-    config = function ()
-      vim.api.nvim_command('source ~/.config/nvim/config/coc.vim')
-    end
-  }
+  --[[
+     [ use {
+     [   'neoclide/coc.nvim',
+     [   branch = 'master',
+     [   run = 'yarn install --frozen-lockfile',
+     [   config = function ()
+     [     vim.api.nvim_command('source ~/.config/nvim/config/coc.vim')
+     [   end
+     [ }
+     ]]
 
   use {
     'HerringtonDarkholme/yats.vim',
@@ -148,6 +150,49 @@ packer.startup(function (use)
     "numtostr/FTerm.nvim",
     config = function ()
       require'config.fterm'
+    end
+  }
+
+  use {
+    'neovim/nvim-lspconfig',
+    config = function ()
+      require'config.lsp'
+    end
+  }
+
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/vim-vsnip' }
+  }
+
+  use {
+    'hrsh7th/cmp-vsnip'
+  }
+
+  use {
+    "ray-x/lsp_signature.nvim"
+  }
+
+  use {
+    'tami5/lspsaga.nvim',
+    config = function ()
+      require'config.lsp_saga'
+    end
+  }
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function ()
+      require'config.telescope'
+    end
+  }
+
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function ()
+      require'config.trouble'
     end
   }
 

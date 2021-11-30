@@ -1,1 +1,1 @@
-source ~/.config/nvim/colorschemes/zenburn.vim
+source ~/.config/nvim/colorschemes/monotone.vim
