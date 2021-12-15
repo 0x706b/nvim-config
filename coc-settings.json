@@ -70,6 +70,13 @@
         "%filepath",
         "--fix-to-stdout"
       ]
+    },
+    "stylua": {
+      "command": "stylua",
+      "args": [
+        "--search-parent-directories",
+        "-"
+      ]
     }
   },
   "diagnostic-languageserver.filetypes": {
@@ -80,7 +87,8 @@
     "typescript": "prettier-eslint_d",
     "typescriptreact": "prettier-eslint_d",
     "css": "prettier",
-    "json": "prettier"
+    "json": "prettier",
+    "lua": "stylua"
   },
   "explorer.file.reveal.auto": true,
   "explorer.floating.border.chars": [
