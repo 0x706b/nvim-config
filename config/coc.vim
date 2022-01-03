@@ -12,7 +12,8 @@ let g:coc_global_extensions = [
 \  'coc-highlight',
 \  'coc-lists',
 \  'coc-explorer',
-\  '@0x706b/coc-diagnostic'
+\  'coc-eslint',
+\  '@0x706b/coc-prettier'
 \  ]
 
 let g:coc_borderchars = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']

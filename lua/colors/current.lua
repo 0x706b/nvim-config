@@ -1,1 +1,1 @@
-return require 'colors.zenburn'
+return require 'colors.monotone'
