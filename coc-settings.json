@@ -193,8 +193,12 @@
         },
         "clang": {
           "extraArgs": [
-            "-isystem",
-            "/usr/local/Cellar/llvm/11.0.0/include/c++/v1"
+            "-isystem/usr/local/include",
+            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1",
+            "-isystem/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include",
+            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include",
+            "-isystem/Library/Developer/CommandLineTools/usr/include",
+            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
           ],
           "resourceDir": "/usr/local/Cellar/llvm/11.0.0/lib/clang/11.0.0/"
         },
@@ -236,10 +240,18 @@
     },
     "purescript": {
       "command": "purescript-language-server",
-      "args": ["--stdio"],
-      "filetypes": ["purescript"],
+      "args": [
+        "--stdio"
+      ],
+      "filetypes": [
+        "purescript"
+      ],
       "trace.server": "off",
-      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"],
+      "rootPatterns": [
+        "bower.json",
+        "psc-package.json",
+        "spago.dhall"
+      ],
       "settings": {
         "purescript": {
           "addSpagoSources": true,
@@ -295,5 +307,6 @@
   "typescript.showUnused": false,
   "typescript.suggest.completeFunctionCalls": false,
   "tsserver.maxTsServerMemory": 4000,
-  "git.enableGutters": true
+  "git.enableGutters": true,
+  "yaml.format.enable": true
 }

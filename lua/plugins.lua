@@ -25,7 +25,8 @@ packer.startup(function (use)
   use '0x706b/parchment.nvim'
   use 'sainnhe/sonokai'
   use 'lifepillar/vim-solarized8'
-  use 'rose-pine/neovim'
+  use '~/dev/rose-pine'
+  use 'Mofiqul/dracula.nvim'
 
   use '0x706b/zenburn.nvim'
 
@@ -43,7 +44,7 @@ packer.startup(function (use)
 
   use {
     'neoclide/coc.nvim',
-    branch = 'master',
+    commit = 'ad3a11638ff78c1c1028e2a0edc1f20e59fe90b7',
     run = 'yarn install --frozen-lockfile',
     config = function ()
       vim.api.nvim_command('source ~/.config/nvim/config/coc.vim')
@@ -149,6 +150,10 @@ packer.startup(function (use)
     config = function ()
       require'config.fterm'
     end
+  }
+
+  use {
+    "projekt0n/github-nvim-theme"
   }
 
 end)

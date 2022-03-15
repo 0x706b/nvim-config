@@ -41,3 +41,5 @@ augroup _fzf
 augroup END
 
 nnoremap <silent> <leader>o :call fzf#run(fzf#wrap({ 'source': 'git ls-files', 'sink': 'e' }))<CR>
+
+nnoremap <silent> <leader>g :Rg<CR>
