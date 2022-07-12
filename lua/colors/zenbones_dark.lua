@@ -1,11 +1,11 @@
-local z = require 'zenbones.palette'.light
+local z = require 'zenbones.palette'.dark
 local lushUtils = require 'util.lush'
 
 local colors = {
   fg = z.fg,
   bg = z.bg,
   bg0 = z.bg.da(4),
-  bg1 = z.bg.da(14),
+  bg1 = z.bg.li(12),
   bg2 = z.bg.da(20),
   fg0 = z.fg.li(4),
   fg1 = z.fg.li(8),

@@ -1,1 +1,1 @@
-source ~/.config/nvim/colorschemes/github_dark_default.vim
+source ~/.config/nvim/colorschemes/zenbones_dark.vim

@@ -1,13 +1,13 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = 'maintained',
+  ensure_installed = 'all',
   ignore_install = { 'comment' },
   highlight = {
     enable = true,
-    -- disable = { 'typescript', 'typescriptreact', 'tsx' }
+    disable = { 'typescript', 'typescriptreact', 'tsx' }
   },
   indent = {
     enable = true,
-    -- disable = { 'typescript', 'typescriptreact', 'tsx' }
+    disable = { 'typescript', 'typescriptreact', 'tsx' }
   }
 }
 
