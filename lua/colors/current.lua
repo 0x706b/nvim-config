@@ -1,1 +1,1 @@
-return require 'colors.zenbones_dark'
+return require 'colors.monotone'

@@ -49,9 +49,11 @@
       "rootPatterns": [
         ".eslintrc",
         ".eslintrc.js",
+        ".eslintrc.cjs",
         ".eslintrc.json",
         ".prettierrc",
         ".prettierrc.js",
+        ".prettierrc.cjs",
         ".prettierrc.json"
       ]
     },
