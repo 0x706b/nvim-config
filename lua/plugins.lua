@@ -44,7 +44,6 @@ packer.startup(function (use)
 
   use {
     'neoclide/coc.nvim',
-    commit = 'ad3a11638ff78c1c1028e2a0edc1f20e59fe90b7',
     run = 'yarn install --frozen-lockfile',
     config = function ()
       vim.api.nvim_command('source ~/.config/nvim/config/coc.vim')
@@ -99,6 +98,8 @@ packer.startup(function (use)
   }
 
   use 'antoinemadec/coc-fzf'
+
+  use 'kyazdani42/nvim-web-devicons'
 
   use {
     'romgrk/barbar.nvim',

@@ -306,6 +306,7 @@
   },
   "suggest.enablePreview": true,
   "suggest.maxPreviewWidth": 200,
+  "suggest.noselect": true,
   "typescript.showUnused": false,
   "typescript.suggest.completeFunctionCalls": false,
   "tsserver.maxTsServerMemory": 4000,
